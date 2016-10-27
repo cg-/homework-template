@@ -17,13 +17,7 @@ clean:
 veryclean: clean
 	rm -f $(TARGET).pdf
 
-view: $(TARGET).pdf
+open: $(TARGET).pdf
 	if [ "Darwin" = "$(shell uname)" ]; then open $(TARGET).pdf ; else evince $(TARGET).pdf ; fi
-
-submit: $(TARGET).pdf
-	cp $(TARGET).pdf ../
-
-print: $(TARGET).pdf
-	lpr $(TARGET).pdf
 
 .PHONY: all again touch clean veryclean view print
